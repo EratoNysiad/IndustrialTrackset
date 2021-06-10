@@ -1,0 +1,66 @@
+//DPRK
+spriteset (dU2N_DPRK_underlay, "grf/CHIPS_C_DPRK_D.png") {
+	tmpl_underlay_track_types()
+}
+spriteset (dU2N_DPRK_overlay, "grf/CHIPS_C_DPRK_D.png") {
+	tmpl_overlay_track_types()
+}
+spriteset (dU2N_DPRK_bridge, "grf/CHIPS_C_DPRK_D.png") {
+	tmpl_bridges_overlay()
+}
+//JP
+spriteset (dU2N_JP_underlay, "grf/CHIPS_C_JP_D.png") {
+	tmpl_underlay_track_types()
+}
+spriteset (dU2N_JP_overlay, "grf/CHIPS_C_JP_D.png") {
+	tmpl_overlay_track_types()
+}
+spriteset (dU2N_JP_bridge, "grf/CHIPS_C_JP_D.png") {
+	tmpl_bridges_overlay()
+}
+//Univ
+switch(FEAT_RAILTYPES, SELF, switch_dU2N_underlay,PARAM_STYLE) {
+	2: dU2N_DPRK_underlay;
+	dU2N_JP_underlay;
+}
+switch(FEAT_RAILTYPES, SELF, switch_dU2N_overlay,PARAM_STYLE) {
+	2: dU2N_DPRK_overlay;
+	dU2N_JP_overlay;
+}
+switch(FEAT_RAILTYPES, SELF, switch_dU2N_bridge,PARAM_STYLE) {
+	2: dU2N_DPRK_bridge;
+	dU2N_JP_bridge;
+}
+
+if(PARAM_CHIPS_C == 1 && (PARAM_ELEC == 0 || PARAM_ELEC == 2) && (PARAM_GAUGE == 3 || PARAM_GAUGE == 4)){
+item(FEAT_RAILTYPES, dU2N_ID, 17) {
+     property {
+         label:                      "dU2N";
+         name:                       string(STR_dU2N);
+         menu_text:                  string(STR_dU2N);
+         build_window_caption:       string(STR_dU2N_BUILD_CAPTION);
+         autoreplace_text:           string(STR_dU2N_AUTOREPLACE);
+         new_engine_text:            string(STR_dU2N_NEW_ENGINE);
+		 toolbar_caption:			 string(STR_dU2N_TB_CAPTION);
+         compatible_railtype_list:   DUAL_ALL;
+         powered_railtype_list:      DUAL_ALL;
+		 alternative_railtype_list:  DUAL_UNELEC;
+         speed_limit:                (0 == 0) ? 121 : 70 km/h;
+         introduction_date:			 date(1800,1,1);
+		 map_colour:				 0x0A;
+         station_graphics:           RAILTYPE_STATION_NORMAL; 
+         acceleration_model:         ACC_MODEL_RAIL;
+         construction_cost:          COSTPARAM(9,PARAM_CONST);
+		 maintenance_cost:		     COSTPARAM(9,PARAM_MAINT);
+		 sort_order:				 0xAA;
+     }
+     graphics {
+         track_overlay:		switch_dU2N_overlay;				// defines the sprites drawn as overlay for junctions and highlight
+         underlay:			switch_dU2N_underlay;				// defines the usual tracks and the underlay for junctions
+         level_crossings:			switch_cross_D;				// defines the usual tracks for crosings
+         bridge_surfaces:	switch_dU2N_bridge;					// defines the overlay drawn over bridges
+		 gui:				CHIPS_C_N_gui;							// defines the gui sprites
+         fences:         	NO_fences;       					// Custom Fences since v2
+     }
+ }
+ }

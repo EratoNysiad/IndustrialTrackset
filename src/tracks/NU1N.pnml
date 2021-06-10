@@ -1,0 +1,78 @@
+//DPRK
+spriteset (NU1N_DPRK_underlay, "grf/ISR_DPRK_N.png") {
+	tmpl_underlay_track_types()
+}
+spriteset (NU1N_DPRK_overlay, "grf/ISR_DPRK_N.png") {
+	tmpl_overlay_track_types()
+}
+spriteset (NU1N_DPRK_bridge, "grf/ISR_DPRK_N.png") {
+	tmpl_bridges_overlay()
+}
+//JP
+spriteset (NU1N_JP_underlay, "grf/ISR_JP_N.png") {
+	tmpl_underlay_track_types()
+}
+spriteset (NU1N_JP_overlay, "grf/ISR_JP_N.png") {
+	tmpl_overlay_track_types()
+}
+spriteset (NU1N_JP_bridge, "grf/ISR_JP_N.png") {
+	tmpl_bridges_overlay()
+}
+spriteset (NU1N_JP_F_underlay, "grf/ISR_JP_N_F.png") {
+	tmpl_underlay_track_types()
+}
+spriteset (NU1N_JP_F_overlay, "grf/ISR_JP_N_F.png") {
+	tmpl_overlay_track_types()
+}
+spriteset (NU1N_JP_F_bridge, "grf/ISR_JP_N_F.png") {
+	tmpl_bridges_overlay()
+}
+//Univ
+switch(FEAT_RAILTYPES, SELF, switch_NU1N_underlay,PARAM_STYLE) {
+	2: NU1N_DPRK_underlay;
+	1: NU1N_JP_F_underlay;
+	NU1N_JP_underlay;
+}
+switch(FEAT_RAILTYPES, SELF, switch_NU1N_overlay,PARAM_STYLE) {
+	2: NU1N_DPRK_overlay;
+	1: NU1N_JP_F_overlay;
+	NU1N_JP_overlay;
+}
+switch(FEAT_RAILTYPES, SELF, switch_NU1N_bridge,PARAM_STYLE) {
+	2: NU1N_DPRK_bridge;
+	1: NU1N_JP_F_bridge;
+	NU1N_JP_bridge;
+}
+
+if(PARAM_ISR == 1 && (PARAM_ELEC == 0 || PARAM_ELEC == 2) && (PARAM_GAUGE != 0 && PARAM_GAUGE != 4)){
+item(FEAT_RAILTYPES, NU1N_ID, 8) {
+     property {
+         label:                      "NU1N";
+         name:                       string(STR_NU1N);
+         menu_text:                  string(STR_NU1N);
+         build_window_caption:       string(STR_NU1N_BUILD_CAPTION);
+         autoreplace_text:           string(STR_NU1N_AUTOREPLACE);
+         new_engine_text:            string(STR_NU1N_NEW_ENGINE);
+		 toolbar_caption:			 string(STR_NU1N_TB_CAPTION);
+         compatible_railtype_list:   NRW_ALL;
+         powered_railtype_list:      NRW_ALL;
+		 alternative_railtype_list:  NRW_UNELEC;
+         speed_limit:                (0 == 0) ? 121 : 70 km/h;
+         introduction_date:			 date(1800,1,1);
+		 map_colour:				 0x0C;
+         station_graphics:           RAILTYPE_STATION_NORMAL; 
+         acceleration_model:         ACC_MODEL_RAIL;
+         construction_cost:          COSTPARAM(5,PARAM_CONST);
+		 maintenance_cost:		     COSTPARAM(4,PARAM_MAINT);
+		 sort_order:				 0xA2;
+     }
+     graphics {
+         track_overlay:		switch_NU1N_overlay;				// defines the sprites drawn as overlay for junctions and highlight
+         underlay:			switch_NU1N_underlay;				// defines the usual tracks and the underlay for junctions
+         level_crossings:			switch_cross_N;				// defines the usual tracks for crosings
+         bridge_surfaces:	switch_NU1N_bridge;					// defines the overlay drawn over bridges
+		 gui:				ISR_N_gui;							// defines the gui sprites
+         fences:         	NO_fences;       					// Custom Fences since v2
+     }
+ }
+ }

@@ -1,0 +1,453 @@
+/* $Id$ */
+
+/*
+ * This file is part of the Swedish RailSet.
+ * Swedish RailSet is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * Swedish RailSet is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with Swedish RailSet. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+// Default ground tile template (re-use as needed)
+template ground_tile(x, y) { [x, y, 64, 31, -31, 0, 9] }
+
+// track_type underlays
+template tmpl_underlay_straight() {
+	[ 75,  0, 64,31, -31,   0]
+	[  0,  0, 64,31, -31,   0]
+}
+template tmpl_underlay_slope() {
+	[ 75, 40, 64,39, -31,  -8]
+	[150, 40, 64,23, -31,   0]
+	[225, 40, 64,23, -31,   0]
+	[300, 40, 64,39, -31,  -8]
+}
+template tmpl_underlay_slope_U() {
+	[ 75, 40, 64,39, -31,  -8]
+	[150, 40, 64,23, -31,   0]
+	[225, 40, 64,23, -31,   0]
+	[300, 40, 64,39, -32,  -8]
+}
+template tmpl_underlay_diagonal() {
+	[150,  0, 64,31, -31,   0]
+	[225,  0, 64,31, -31,   0]
+	[  0, 40, 64,31, -31,   0]			
+	[300,  0, 64,31, -31,   0]
+}
+
+template tmpl_underlay_track_types() {
+	tmpl_underlay_straight()
+
+	tmpl_underlay_diagonal()
+
+	tmpl_underlay_slope()
+	
+	// x - crossing
+	[  0,120, 64,31, -31,   0]
+	
+	// underlay for crossings w/o tracks
+	[  0, 80, 64,31, -31,   0]
+	[225, 80, 64,31, -31,   0]
+	[150, 80, 64,31, -31,   0]
+	[ 75, 80, 64,31, -31,   0]
+	[300, 80, 64,31, -31,   0]
+}
+template tmpl_underlay_track_types_U() {//Urban
+	tmpl_underlay_straight()
+
+	tmpl_underlay_diagonal()
+
+	tmpl_underlay_slope_U()
+	
+	// x - crossing
+	[  0,120, 64,31, -31,   0]
+	
+	// underlay for crossings w/o tracks
+	[  0, 80, 64,31, -31,   0]
+	[225, 80, 64,31, -31,   0]
+	[150, 80, 64,31, -31,   0]
+	[ 75, 80, 64,31, -31,   0]
+	[300, 80, 64,31, -31,   0]
+}
+template tmpl_overlay_straight_EDS() {
+	[  0,155, 42,23, -19-2,   5-1]
+	[ 50,155, 42,23, -19,   5-1]
+}
+template tmpl_overlay_slopes_EDS() {
+	[  0,195, 64,39, -31,  -8]
+	[ 75,195, 64,23, -31,   0]
+	[150,195, 64,23, -31,   0]
+	[225,195, 64,39, -32,  -9]
+}
+template tmpl_overlay_diagonal_EDS() {
+	[97,155, 46, 8, -19-3,   4-1]
+	[150,155, 48, 8, -19-4,  20-1]
+	[200,155, 12,21,  11,   6-1]			
+	[250,155, 12,21, -21,   6-1]
+}
+
+
+// track_type overlays_EDS
+template tmpl_overlay_track_types_EDS() {
+    tmpl_overlay_straight_EDS()
+    tmpl_overlay_diagonal_EDS()
+    tmpl_overlay_slopes_EDS()
+}
+
+template tmpl_overlay_straight() {
+	[  0,155, 40,23, -19,   5]
+	[ 50,155, 40,23, -19,   5]
+}
+template tmpl_overlay_slopes() {
+	[  0,195, 64,39, -31,  -8]
+	[ 75,195, 64,23, -31,   0]
+	[150,195, 64,23, -31,   0]
+	[225,195, 64,39, -32,  -9]
+}
+template tmpl_overlay_diagonal() {
+	[100,155, 40, 7, -19,   4]
+	[150,155, 40, 7, -19,  20]
+	[200,155, 12,19,  11,   6]			
+	[250,155, 12,19, -21,   6]
+}
+
+
+// track_type overlays
+template tmpl_overlay_track_types() {
+    tmpl_overlay_straight()
+    tmpl_overlay_diagonal()
+    tmpl_overlay_slopes()
+}
+
+template tmpl_bridges_underlay() {
+	tmpl_underlay_straight()
+	tmpl_underlay_slope()
+	tmpl_underlay_diagonal()
+}
+
+// bridge surface overlays
+template tmpl_bridges_overlay() {
+//    tmpl_overlay_straight()
+//    tmpl_overlay_slopes()
+//    tmpl_overlay_diagonal()
+	tmpl_bridges_underlay()
+}
+
+// track_type tunnel tracks
+template tmpl_tunnel_tracks() {
+	[ 75,  0, 64,31, -31,   0]
+	[  0,  0, 64,31, -31,   0]
+	[ 75,  0, 64,31, -31,   0]
+	[  0,  0, 64,31, -31,   0]
+}
+// track_type level crossings
+template tmpl_level_crossing_track_types_empty() {
+	[  0,155, 40,21, -20,   5]
+	[ 50,155, 40,21, -20,   5]
+
+	[  0,240, 10,10,   0,   0]
+	[  0,240, 10,10,   0,   0]
+	[  0,240, 10,10,   0,   0]
+	[  0,240, 10,10,   0,   0]
+	[  0,240, 10,10,   0,   0]
+	[  0,240, 10,10,   0,   0]
+	[  0,240, 10,10,   0,   0]
+	[  0,240, 10,10,   0,   0]
+}
+template tmpl_rails_crossing(x,y) {
+	[   x,  y, 45,23, -21,   4]
+	[x+49,  y, 45,23, -22,   4]
+}
+template tmpl_level_crossing_track_types_open(y) {
+    tmpl_rails_crossing(0, 0)
+
+	[  0,  0,  1,1,  0,  0]
+	[ 0,  y,  5,23,  -5, -16]
+
+	[20,  y,  5,23,  -6, -21]
+	[  0,  0,  1,1,  0,  0]
+
+	[40,  y,  5,23,   3, -18]
+	[  0,  0,  1,1,  0,  0]
+
+	[  0,  0,  1,1,  0,  0]
+	[60,  y,  5,23,  1, -22]
+}
+template tmpl_level_crossing_track_types_none(y) {
+	[ 75,  0, 64,31, -31,   0]
+	[  0,  0, 64,31, -31,   0]
+
+	[  0,  0,  1,1,  0,  0]
+	[  0,  0,  1,1,  0,  0]
+
+	[  0,  0,  1,1,  0,  0]
+	[  0,  0,  1,1,  0,  0]
+
+	[  0,  0,  1,1,  0,  0]
+	[  0,  0,  1,1,  0,  0]
+
+	[  0,  0,  1,1,  0,  0]
+	[  0,  0,  1,1,  0,  0]
+}
+template tmpl_level_crossing_track_types_closed(y) {
+    tmpl_rails_crossing(0, 0)
+
+	[  0,  0,  1,1,  0,  0]
+	[ 0,  y,  19,19,  -5, -7]
+
+	[20,  y,  19,19,  -20, -12]
+	[  0,  0,  1,1,  0,  0]
+
+	[40,  y,  19,19,   3, -7]
+	[  0,  0,  1,1,  0,  0]
+
+	[  0,  0,  1,1,  0,  0]
+	[60,  y,  19,19,  -13, -11]
+}
+//japanese tracks
+template tmpl_rails_crossing_jp(x,y) {
+	[   x,  y, 47,24, -22,   4]
+	[x+48,  y, 47,24, -23,   4]
+}
+template tmpl_level_crossing_track_types_jp(y) {
+    tmpl_rails_crossing_jp(0, 0)
+
+	[ 0,  y,  20,20,  -14, -8, ANIM]//n
+	[21,  y,  20,20,   -3, -7, ANIM]
+	[ 0,  y,  20,20,  -20, -11, ANIM]////e
+	[21,  y,  20,20,   -8, -10, ANIM]
+	[ 0,  y,  20,20,  -11, -10, ANIM]//w
+	[21,  y,  20,20,   3, -10, ANIM]
+	[ 0,  y,  20,20,  -17, -13, ANIM]//s
+	[21,  y,  20,20,   -2, -13, ANIM]
+	
+}
+
+// fences
+template tmpl_fences(y) { 
+//fence drawing on diagonals is and has always been broken, the fences on both sides really need to be moved apart 4 px horizontally and 2 px vertically (1 "TTD unit", see also:
+//	- https://www.tt-forums.net/viewtopic.php?f=26&t=61584
+//	- https://bugs.openttd.org/task/5309
+// need to move both sides half of that to compensate, or (todo) write a patch
+// commented offsets are perfect for the front fence on diagonals
+//	[  0,  y, 33,22, -30,  -6]
+	[  0,  y, 33,22, -32,  -7]
+//	[ 48,  y, 33,22,  -2,  -6]
+	[ 48,  y, 33,22,  0,  -7]
+	[ 93,  y,  8,32,  -3, -19] // verticals are OK as-is
+	[112,  y, 65, 9, -32, -10] // same for horizontals
+//	[192,  y, 33,15, -29,  -7]
+	[192,  y, 33,15, -31,  -8]
+//	[240,  y, 33,15,  -1,  -7]
+	[240,  y, 33,15,  1,  -8]
+//	[288,  y, 33,30, -30, -14]
+	[288,  y, 33,30, -32, -15]
+//	[350,  y, 33,30,  -2, -14]
+	[350,  y, 33,30,  0, -15]
+}
+
+// gui
+template tmpl_gui() {
+	[  0,  0, 20, 20, 0, 0]
+	[ 25,  0, 20, 20, 0, 0]
+	[ 50,  0, 20, 20, 0, 0]
+	[ 75,  0, 20, 20, 0, 0]
+	[100,  0, 20, 20, 0, 0]
+	[125,  0, 20, 20, 0, 0]
+	[150,  0, 20, 20, 0, 0]
+	[175,  0, 20, 20, 0, 0]
+	
+	[200,  0, 32, 32, 0, 0]
+	[250,  0, 32, 32, 0, 0]
+	[300,  0, 32, 32, 0, 0]
+	[350,  0, 32, 32, 0, 0]
+	[400,  0, 32, 32, 0, 0]
+	[450,  0, 32, 32, 0, 0]
+	[500,  0, 32, 32, 0, 0]
+	[550,  0, 32, 32, 0, 0]
+}
+
+template tmpl_tunnel_overlaytracks(y) {
+	[ 0, y, 64, 39,  -7-24, -8]
+	[65, y, 64, 39,  -9-7-13-2, -3-14+1]
+	[130, y, 64, 39, -26-7+2, -3-14+1]
+	[195, y, 64, 39, -19-12, -8]
+}
+
+ template tmpl_tunnel_overlays(y) {
+	[ 0, y, 64, 39,  -7-24, -38]
+	[65, y, 64, 39,  -9-7-13-2, -33-14+1]
+	[130, y, 64, 39, -26-7+2, -33-14+1]
+	[195, y, 64, 39, -19-12, -38]
+}
+
+template tmpl_no_fences() {
+	[  0,  0,  1, 1,    0,  0]
+	[  0,  0,  1, 1,    0,  0]
+	[  0,  0,  1, 1,    0,  0]
+	[  0,  0,  1, 1,    0,  0]
+	[  0,  0,  1, 1,    0,  0]
+	[  0,  0,  1, 1,    0,  0]
+	[  0,  0,  1, 1,    0,  0]
+	[  0,  0,  1, 1,    0,  0]
+}
+
+template tmpl_depot(x) {	
+	[65, 96+2*x, 64,47+x,  -9-22, -31+11-x]
+	[65,  0, 64,47+x,  -9, -31-x]
+	[ 0, 96+2*x, 64,47+x, -53+22, -31+11-x]
+	[ 0,  0, 64,47+x, -53, -31-x]
+	[ 0, 48+x, 64,47+x, -53, -31-x]
+	[65, 48+x, 64,47+x,  -9, -31-x]
+}
+
+// Catenary stuff from Auztracks
+/**********************************************
+//Catenarypylons
+ **********************************************/
+
+//Catenarypylons
+template template_catenarydoublepylons() {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+ [ 4, 28, 14, 32, -11, -30]
+ [ 20, 17, 40, 43, 1, -41]
+ [ 62, 28, 14, 32, -1, -30]
+ [ 78, 17, 40, 43, -39, -41]
+ [ 120, 28, 14, 32, -6, -31]
+ [ 136, 16, 14, 44, -6, -42]
+ [ 152, 28, 28, 32, 0, -31]
+ [ 181, 28, 27, 32, -26, -31]
+}
+
+/**********************************************
+//Catenarywires
+ **********************************************/
+
+template template_catenarywires() {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+ [ 10, 100, 64, 42, -45, -20]
+ [ 100, 100, 64, 42, -17, -20]
+ [ 200, 100, 32, 11, 0, -12] //-1
+ [ 300, 100, 1, 21, 0, -8] //0
+ [ 10, 200, 64, 50, -45, -21]
+ [ 100, 200, 64, 34, -17, -10]
+ [ 200, 200, 64, 34, -45, -10]
+ [ 300, 200, 64, 50, -17, -21]
+ [ 10, 300, 64, 42, -45, -20]
+ [ 100, 300, 64, 42, -17, -20]
+ [ 200, 300, 32, 11, 0, -12]
+ [ 300, 300, 1, 21, 0, -8] //0
+ [ 10, 400, 64, 50, -45, -21]
+ [ 100, 400, 64, 34, -17, -10]
+ [ 200, 400, 64, 34, -45, -10]
+ [ 300, 400, 64, 50, -17, -21]
+ [ 10, 500, 64, 42, -45, -20]
+ [ 100, 500, 64, 42, -17, -20]
+ [ 200, 500, 32, 11, 0, -12]
+ [ 300, 500, 1, 21, 0, -8] //0
+ [ 10, 600, 64, 50, -45, -21]
+ [ 100, 600, 64, 34, -17, -10]
+ [ 200, 600, 64, 34, -45, -10]
+ [ 300, 600, 64, 50, -17, -21]
+ [ 10, 700, 64, 42, -45, -20]
+ [ 100, 700, 64, 42, -17, -20]
+ [ 200, 700, 64, 42, -45, -20]
+ [ 300, 700, 64, 42, -17, -20]
+}
+// Catenary stuff from Auztracks
+/**********************************************
+//Catenarypylons
+ **********************************************/
+template template_nopylons() {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+ [1, 1, 1, 1, 1, 1]
+ [1, 1, 1, 1, 1, 1]
+ [1, 1, 1, 1, 1, 1]
+ [1, 1, 1, 1, 1, 1]
+ [1, 1, 1, 1, 1, 1]
+ [1, 1, 1, 1, 1, 1]
+ [1, 1, 1, 1, 1, 1]
+ [1, 1, 1, 1, 1, 1]
+}
+template template_metroroof() {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+	//Single tile
+	[0, 0, 64, 31+8, -32-16+3, -20+15]
+	[65, 48, 64, 31+8, -32+16-1, -20+15]
+	[130, 32+8, 64, 31, -32+16-1, -20+15]
+	[0, 32+8, 64, 31, -32-16+1, -20+15-1]
+	//Single tile sloped
+	[65, 0, 64, 39+8, -32-13, -20+14]
+	[130, 0, 64, 23+8, -32+15, -20+24]
+	[195, 0, 64, 23+8, -32-13, -20+24]
+	[260, 0, 64, 39+8, -32+15, -20+14]
+	//Multitile
+	[0, 0, 64, 31+8, -32-16+3, -20+15]
+	[65, 48, 64, 31+8, -32+16-1, -20+15]
+	[130, 32+8, 64, 31, -32+16-1, -20+15]
+	[0, 32+8, 64, 31, -32-16+1, -20+15-1]
+	//Multitile
+	[65, 0, 64, 39+8, -32-13, -20+14]
+	[130, 0, 64, 23+8, -32+15, -20+24]
+	[195, 0, 64, 23+8, -32-13, -20+24]
+	[260, 0, 64, 39+8, -32+15, -20+14]
+	//Multitile
+	[0, 0, 64, 31+8, -32-16+3, -20+15]
+	[65, 48, 64, 31+8, -32+16-1, -20+15]
+	[130, 32+8, 64, 31, -32+16-1, -20+15]
+	[0, 32+8, 64, 31, -32-16+1, -20+15-1]
+	//Multitile
+	[65, 0, 64, 39+8, -32-13, -20+14]
+	[130, 0, 64, 23+8, -32+15, -20+24]
+	[195, 0, 64, 23+8, -32-13, -20+24]
+	[260, 0, 64, 39+8, -32+15, -20+14]
+	[1, 1, 1, 1, 1, 1]
+	[1, 1, 1, 1, 1, 1]
+	[1, 1, 1, 1, 1, 1]
+	[1, 1, 1, 1, 1, 1]
+}
+
+//Courtesy of Emperor Jake I guess
+//Catenary Poles Modern style
+//maybe re-add urban poles in future
+template japan_rails_pylons() {
+	[      0,       100,     10,     19,       -8, 	 -19]
+	[     16,       100,     9,     21,        0, 		 -21]
+	[     32,       100,     10,     19,        0, 	 -19]
+	[     48,       100,     9,     21,       -7, 		 -21]
+	[     64,       100,     3,      18,        0,  	 -19]
+	[     80,       100,     3,      21,        0,  	 -21]
+	[     96,       100,     10,     19, 	     -2,  	 -17]
+	[    112,       100,     10,     19,       -7, 		 -15]
+}
+
+//Catenary Wires
+template japan_rails_wires() {
+	[0,		0,  	32, 20, -29, -6]
+	[48,	0,  	32, 20,  -1, -6]
+	[96,	0,  	32,  5,  -1, -6]
+	[144,	0,  	1,  20,   0, -7]
+	[160,	0,  	32, 28, -29, -6]
+	[208,	0,  	32, 13,  -1,  2]
+	[256,	0,  	32, 13, -29,  2]
+	[304,	0,  	32, 18,  -1, -6]
+	[352,	0, 		32, 19, -29, -5]
+	[400,	0, 		32, 19,  -1, -5]
+	[448,	0, 		32,  5,  -1, -6]
+	[496,	0, 		1,  20,   0, -7]
+	[512,	0, 		32, 27, -29, -5]
+	[560,	0, 		32, 12,  -1,  3]
+	[608,	0, 		32, 12, -29,  3]
+	[656,	0, 		32, 27,  -1, -5]
+	[704,	0, 		32, 20, -29, -6]
+	[0, 	50, 	32,	20,  -1, -6]
+	[48, 	50, 	32,  5,  -1, -6]
+	[96, 	50, 	1,  20,   0, -7]
+	[112, 	50, 	32, 28, -29, -6]
+	[160, 	50, 	32, 13,  -1,  2]
+	[208, 	50, 	32,	13, -29,  2]
+	[256, 	50, 	32, 28,  -1, -6]
+	[304, 	50, 	16, 11, -29,  3]
+	[336, 	50, 	16, 12,  -1, -6]
+	[368, 	50, 	16, 12, -13, -6]
+	[400, 	50, 	16, 11,  15,  3]
+}

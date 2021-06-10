@@ -1,0 +1,138 @@
+
+spriteset (ISR_N_gui, "grf/ISR_N_GUI.png") {
+	tmpl_gui()
+}
+spriteset (ISR_E_gui, "grf/ISR_E_GUI.png") {
+	tmpl_gui()
+}
+spriteset (CHIPS_A_N_gui, "grf/CHIPS_A_N_GUI.png") {
+	tmpl_gui()
+}
+spriteset (CHIPS_A_E_gui, "grf/CHIPS_A_E_GUI.png") {
+	tmpl_gui()
+}
+spriteset (CHIPS_C_N_gui, "grf/CHIPS_C_N_GUI.png") {
+	tmpl_gui()
+}
+spriteset (CHIPS_C_E_gui, "grf/CHIPS_C_E_GUI.png") {
+	tmpl_gui()
+}
+spriteset (CHIPS_D_N_gui, "grf/CHIPS_D_N_GUI.png") {
+	tmpl_gui()
+}
+spriteset (CHIPS_D_E_gui, "grf/CHIPS_D_E_GUI.png") {
+	tmpl_gui()
+}
+
+//Fuck it, I'll do catenary here as well
+
+spriteset(spriteset_jp_wires, "grf/catwire.png") {
+	japan_rails_wires()
+}
+spriteset(spriteset_jp_poles, "grf/catpoles.png") {
+	japan_rails_pylons()
+}	
+spriteset(spriteset_kp_wires, "grf/SBAD_WIRE.png") {
+	template_catenarywires()
+}
+spriteset(spriteset_kp_poles, "grf/SBAD_PYLON.png") {
+	template_catenarydoublepylons()
+}
+switch(FEAT_RAILTYPES, SELF, switch_wires,PARAM_STYLE) {
+	2: spriteset_kp_wires;
+	spriteset_jp_wires;
+}
+switch(FEAT_RAILTYPES, SELF, switch_poles,PARAM_STYLE) {
+	2: spriteset_kp_poles;
+	spriteset_jp_poles;
+}
+
+//and crossings
+
+spriteset(KP_S_cross_open, "grf/KPS_CROSS.png") {
+	tmpl_level_crossing_track_types_open(24)
+}
+spriteset(KP_S_cross_closed, "grf/KPS_CROSS.png") {
+	tmpl_level_crossing_track_types_closed(48)
+}
+switch(FEAT_RAILTYPES, SELF, KP_S_cross, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: KP_S_cross_closed;
+	KP_S_cross_open;
+}
+spriteset(KP_N_cross_open, "grf/KPN_CROSS.png") {
+	tmpl_level_crossing_track_types_open(24)
+}
+spriteset(KP_N_cross_closed, "grf/KPN_CROSS.png") {
+	tmpl_level_crossing_track_types_closed(48)
+}
+switch(FEAT_RAILTYPES, SELF, KP_N_cross, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: KP_N_cross_closed;
+	KP_N_cross_open;
+}
+spriteset(KP_D_cross_open, "grf/KPD_CROSS.png") {
+	tmpl_level_crossing_track_types_open(24)
+}
+spriteset(KP_D_cross_closed, "grf/KPD_CROSS.png") {
+	tmpl_level_crossing_track_types_closed(48)
+}
+switch(FEAT_RAILTYPES, SELF, KP_D_cross, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: KP_D_cross_closed;
+	KP_D_cross_open;
+}
+
+
+spriteset(JP_S_cross_open, "grf/JPS_CROSS.png") {
+	tmpl_level_crossing_track_types_jp(25)
+}
+spriteset(JP_S_cross_closed, "grf/JPS_CROSS.png") {
+	tmpl_level_crossing_track_types_jp(46)
+}
+switch(FEAT_RAILTYPES, SELF, JP_S_cross, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: JP_S_cross_closed;
+	JP_S_cross_open;
+}
+spriteset(JP_N_cross_open, "grf/JPN_CROSS.png") {
+	tmpl_level_crossing_track_types_jp(25)
+}
+spriteset(JP_N_cross_closed, "grf/JPN_CROSS.png") {
+	tmpl_level_crossing_track_types_jp(46)
+}
+switch(FEAT_RAILTYPES, SELF, JP_N_cross, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: JP_N_cross_closed;
+	JP_N_cross_open;
+}
+spriteset(JP_F_cross_open, "grf/JPF_CROSS.png") {
+	tmpl_level_crossing_track_types_jp(25)
+}
+spriteset(JP_F_cross_closed, "grf/JPF_CROSS.png") {
+	tmpl_level_crossing_track_types_jp(46)
+}
+switch(FEAT_RAILTYPES, SELF, JP_F_cross, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: JP_F_cross_closed;
+	JP_F_cross_open;
+}
+spriteset(JP_D_cross_open, "grf/JPD_CROSS.png") {
+	tmpl_level_crossing_track_types_jp(25)
+}
+spriteset(JP_D_cross_closed, "grf/JPD_CROSS.png") {
+	tmpl_level_crossing_track_types_jp(46)
+}
+switch(FEAT_RAILTYPES, SELF, JP_D_cross, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: JP_D_cross_closed;
+	JP_D_cross_open;
+}
+
+switch(FEAT_RAILTYPES, SELF, switch_cross_S,PARAM_STYLE) {
+	2: KP_S_cross;
+	1: JP_N_cross;
+	JP_S_cross;
+}
+switch(FEAT_RAILTYPES, SELF, switch_cross_N,PARAM_STYLE) {
+	2: KP_N_cross;
+	1: JP_F_cross;
+	JP_N_cross;
+}
+switch(FEAT_RAILTYPES, SELF, switch_cross_D,PARAM_STYLE) {
+	2: KP_D_cross;
+	JP_D_cross;
+}

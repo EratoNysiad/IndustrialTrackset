@@ -1,0 +1,35 @@
+if(PARAM_CHIPS_D == 1 && (PARAM_ELEC == 0 || PARAM_ELEC == 1) && (PARAM_GAUGE != 1 && PARAM_GAUGE != 4)){
+item(FEAT_RAILTYPES, SU3E_ID, 6) {
+     property {
+         label:                      "SU3E";
+         name:                       string(STR_SU3E);
+         menu_text:                  string(STR_SU3E);
+         build_window_caption:       string(STR_SU3E_BUILD_CAPTION);
+         autoreplace_text:           string(STR_SU3E_AUTOREPLACE);
+         new_engine_text:            string(STR_SU3E_NEW_ENGINE);
+		 toolbar_caption:			 string(STR_SU3E_TB_CAPTION);
+         compatible_railtype_list:   STD_ALL;
+         powered_railtype_list:      STD_ELEC;
+		 alternative_railtype_list:  STD_ELEC;
+         speed_limit:                (0 == 0) ? 121 : 70 km/h;
+         introduction_date:			 date(1800,1,1);
+		 map_colour:				 0xC3;
+         station_graphics:           RAILTYPE_STATION_NORMAL; 
+         acceleration_model:         ACC_MODEL_RAIL;
+         construction_cost:          COSTPARAM(12,PARAM_CONST);
+		 maintenance_cost:		     COSTPARAM(14,PARAM_MAINT);
+		 sort_order:				 0xAD;
+         railtype_flags: bitmask(RAILTYPE_FLAG_CATENARY);
+     }
+     graphics {
+         track_overlay:		switch_SU3N_overlay;				// defines the sprites drawn as overlay for junctions and highlight
+         underlay:			switch_SU3N_underlay;				// defines the usual tracks and the underlay for junctions
+         level_crossings:			switch_cross_S;				// defines the usual tracks for crosings
+         bridge_surfaces:	switch_SU3N_bridge;					// defines the overlay drawn over bridges
+		 gui:				CHIPS_D_E_gui;							// defines the gui sprites
+         fences:         	NO_fences;       					// Custom Fences since v2
+         catenary_wire:		switch_wires;
+         catenary_pylons:		switch_poles;
+     }
+ }
+ }

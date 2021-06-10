@@ -1,0 +1,122 @@
+#define COSTPARAM(basecost,param) (param == 0) ? basecost/4 : (param == 1) ? basecost/2 : (param == 3) ? basecost*2 : (param == 4) ? basecost*4 : basecost
+
+grf {
+	grfid:	"EN\0E\01";
+	name:	string(STR_GRF_NAME);
+	desc:	string(STR_GRF_DESC);
+	version:	3;
+	min_compatible_version: 0;
+	param {
+		PARAM_CONST {
+			type:    int;
+			name:    string(STR_MSC);
+			desc:    string(STR_CON_DESC);
+			min_value: 0;
+			max_value: 4;
+			def_value: 2;
+			names: {
+				0: string(STR_MC_0);
+				1: string(STR_MC_1);
+				2: string(STR_MC_2);
+				3: string(STR_MC_3);
+				4: string(STR_MC_4);
+			};
+		}
+	}
+	param {
+		PARAM_MAINT {
+			type:    int;
+			name:    string(STR_MSM);
+			desc:    string(STR_MAINT_DESC);
+			min_value: 0;
+			max_value: 4;
+			def_value: 2;
+			names: {
+				0: string(STR_MC_0);
+				1: string(STR_MC_1);
+				2: string(STR_MC_2);
+				3: string(STR_MC_3);
+				4: string(STR_MC_4);
+			};
+		}
+	}
+	param {
+		PARAM_STYLE {
+			type:    int;
+			name:    string(STR_PARAM_STYLE);
+			desc:    string(STR_PARAM_STYLE_DESC);
+			min_value: 0;
+			max_value: 2;
+			def_value: 0;
+			names: {
+				0: string(STR_PARAM_STYLE_0);
+				1: string(STR_PARAM_STYLE_1);
+				2: string(STR_PARAM_STYLE_2);
+			};
+		}
+	}
+	param {
+		PARAM_ELEC {
+			type:	int;
+			name:	string(STR_PARAM_ELEC);
+			desc:	string(STR_PARAM_ELEC_DESC);
+			min_value: 0;
+			max_value: 2;
+			def_value: 0;
+			names: {
+				0: string(STR_PARAM_ELEC_0);
+				1: string(STR_PARAM_ELEC_1);
+				2: string(STR_PARAM_ELEC_2);
+			};
+		}
+	}
+	param {
+		PARAM_GAUGE {
+			type:	int;
+			name:	string(STR_PARAM_GAUGE);
+			desc:	string(STR_PARAM_GAUGE_DESC);
+			min_value: 0;
+			max_value: 4;
+			def_value: 0;
+			names: {
+				0: string(STR_PARAM_GAUGE_0);
+				1: string(STR_PARAM_GAUGE_1);
+				2: string(STR_PARAM_GAUGE_2);
+				3: string(STR_PARAM_GAUGE_3);
+				4: string(STR_PARAM_GAUGE_4);
+			};
+		}
+	}
+	param {
+		PARAM_ISR {
+			type:	bool;
+			name:	string(STR_PARAM_ISR);
+			desc:	string(STR_PARAM_ISR_DESC);
+			def_value: 1;
+		}
+	}
+	param {
+		PARAM_CHIPS_C {
+			type:	bool;
+			name:	string(STR_PARAM_CHIPS_C);
+			desc:	string(STR_PARAM_CHIPS_C_DESC);
+			def_value: 1;
+		}
+	}
+	param {
+		PARAM_CHIPS_D {
+			type:	bool;
+			name:	string(STR_PARAM_CHIPS_D);
+			desc:	string(STR_PARAM_CHIPS_D_DESC);
+			def_value: 1;
+		}
+	}
+	param {
+		PARAM_CHIPS_A {
+			type:	bool;
+			name:	string(STR_PARAM_CHIPS_A);
+			desc:	string(STR_PARAM_CHIPS_A_DESC);
+			def_value: 1;
+		}
+	}
+}

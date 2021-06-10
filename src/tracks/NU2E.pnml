@@ -1,0 +1,35 @@
+if(PARAM_CHIPS_C == 1 && (PARAM_ELEC == 0 || PARAM_ELEC == 1) && (PARAM_GAUGE != 0 && PARAM_GAUGE != 4)){
+item(FEAT_RAILTYPES, NU2E_ID, 13) {
+     property {
+         label:                      "NU2E";
+         name:                       string(STR_NU2E);
+         menu_text:                  string(STR_NU2E);
+         build_window_caption:       string(STR_NU2E_BUILD_CAPTION);
+         autoreplace_text:           string(STR_NU2E_AUTOREPLACE);
+         new_engine_text:            string(STR_NU2E_NEW_ENGINE);
+		 toolbar_caption:			 string(STR_NU2E_TB_CAPTION);
+         compatible_railtype_list:   NRW_ALL;
+         powered_railtype_list:      NRW_ELEC;
+		 alternative_railtype_list:  NRW_ELEC;
+         speed_limit:                (0 == 0) ? 121 : 70 km/h;
+         introduction_date:			 date(1800,1,1);
+		 map_colour:				 0x44;
+         station_graphics:           RAILTYPE_STATION_NORMAL; 
+         acceleration_model:         ACC_MODEL_RAIL;
+         construction_cost:          COSTPARAM(6,PARAM_CONST);
+		 maintenance_cost:		     COSTPARAM(5,PARAM_MAINT);
+		 sort_order:				 0xA9;
+         railtype_flags: bitmask(RAILTYPE_FLAG_CATENARY);
+     }
+     graphics {
+         track_overlay:		switch_NU2N_overlay;				// defines the sprites drawn as overlay for junctions and highlight
+         underlay:			switch_NU2N_underlay;				// defines the usual tracks and the underlay for junctions
+         level_crossings:			switch_cross_N;				// defines the usual tracks for crosings
+         bridge_surfaces:	switch_NU2N_bridge;					// defines the overlay drawn over bridges
+		 gui:				CHIPS_C_E_gui;							// defines the gui sprites
+         fences:         	NO_fences;       					// Custom Fences since v2
+         catenary_wire:		switch_wires;
+         catenary_pylons:		switch_poles;
+     }
+ }
+ }

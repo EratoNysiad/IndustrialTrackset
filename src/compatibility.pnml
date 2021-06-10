@@ -1,0 +1,31 @@
+item(FEAT_RAILTYPES) {
+    property {
+        label: "RAIL";
+        compatible_railtype_list: STD_ALL;
+		powered_railtype_list:    STD_ALL;		
+    }
+}
+
+item(FEAT_RAILTYPES) {
+    property {
+        label: "ELRL";
+        compatible_railtype_list: STD_ALL;
+		powered_railtype_list:    STD_ELEC; 
+    }
+}
+
+item(FEAT_RAILTYPES) {
+    property {
+        label: "NAAN";
+        compatible_railtype_list: NRW_ALL;
+		powered_railtype_list:    NRW_ALL;		
+    }
+}
+
+item(FEAT_RAILTYPES) {
+    property {
+        label: "NABE";
+        compatible_railtype_list: NRW_ALL;
+		powered_railtype_list:    NRW_ELEC; 
+    }
+}

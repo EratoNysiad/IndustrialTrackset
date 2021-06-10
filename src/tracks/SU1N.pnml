@@ -1,0 +1,69 @@
+//DPRK
+spriteset (SU1N_DPRK_underlay, "grf/ISR_DPRK_S.png") {
+	tmpl_underlay_track_types()
+}
+spriteset (SU1N_DPRK_overlay, "grf/ISR_DPRK_S.png") {
+	tmpl_overlay_track_types()
+}
+spriteset (SU1N_DPRK_bridge, "grf/ISR_DPRK_S.png") {
+	tmpl_bridges_overlay()
+}
+//JP
+spriteset (SU1N_JP_underlay, "grf/ISR_JP_S.png") {
+	tmpl_underlay_track_types()
+}
+spriteset (SU1N_JP_overlay, "grf/ISR_JP_S.png") {
+	tmpl_overlay_track_types()
+}
+spriteset (SU1N_JP_bridge, "grf/ISR_JP_S.png") {
+	tmpl_bridges_overlay()
+}
+//Univ
+switch(FEAT_RAILTYPES, SELF, switch_SU1N_underlay,PARAM_STYLE) {
+	2: SU1N_DPRK_underlay;
+	1: NU1N_JP_underlay;
+	SU1N_JP_underlay;
+}
+switch(FEAT_RAILTYPES, SELF, switch_SU1N_overlay,PARAM_STYLE) {
+	2: SU1N_DPRK_overlay;
+	1: NU1N_JP_overlay;
+	SU1N_JP_overlay;
+}
+switch(FEAT_RAILTYPES, SELF, switch_SU1N_bridge,PARAM_STYLE) {
+	2: SU1N_DPRK_bridge;
+	1: NU1N_JP_bridge;
+	SU1N_JP_bridge;
+}
+
+if(PARAM_ISR == 1 && (PARAM_ELEC == 0 || PARAM_ELEC == 2) && (PARAM_GAUGE != 1 && PARAM_GAUGE != 4)){
+item(FEAT_RAILTYPES, SU1N_ID, 0) {
+     property {
+         label:                      "SU1N";
+         name:                       string(STR_SU1N);
+         menu_text:                  string(STR_SU1N);
+         build_window_caption:       string(STR_SU1N_BUILD_CAPTION);
+         autoreplace_text:           string(STR_SU1N_AUTOREPLACE);
+         new_engine_text:            string(STR_SU1N_NEW_ENGINE);
+		 toolbar_caption:			 string(STR_SU1N_TB_CAPTION);
+         compatible_railtype_list:   STD_ALL;
+         powered_railtype_list:      STD_ALL;
+		 alternative_railtype_list:  STD_UNELEC;
+         speed_limit:                (0 == 0) ? 121 : 70 km/h;
+         introduction_date:			 date(1800,1,1);
+		 map_colour:				 0x0B;
+         station_graphics:           RAILTYPE_STATION_NORMAL; 
+         acceleration_model:         ACC_MODEL_RAIL;
+         construction_cost:          COSTPARAM(8,PARAM_CONST);
+		 maintenance_cost:		     COSTPARAM(8,PARAM_MAINT);
+		 sort_order:				 0xA0;
+     }
+     graphics {
+         track_overlay:		switch_SU1N_overlay;				// defines the sprites drawn as overlay for junctions and highlight
+         underlay:			switch_SU1N_underlay;				// defines the usual tracks and the underlay for junctions
+         level_crossings:			switch_cross_S;				// defines the usual tracks for crosings
+         bridge_surfaces:	switch_SU1N_bridge;					// defines the overlay drawn over bridges
+		 gui:				ISR_N_gui;							// defines the gui sprites
+         fences:         	NO_fences;       					// Custom Fences since v2
+     }
+ }
+ }

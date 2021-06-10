@@ -1,0 +1,195 @@
+##grflangid 0x01
+# 0x01 -> English
+
+# General GRF strings
+STR_GRF_NAME	:Industrial Track Set 1.3
+STR_GRF_DESC	:A trackset for use with CHIPS, FIRS and ISR. Designed for visual compatibility with JapanSet Tracks and DPRK tracks. {}{BLACK} {}{COPYRIGHT}2021 Erato Nysiad{}License:GPL v2{}Credit:{}{BLACK}Japan Set Tracks: {SILVER}Dandan, Emperor Jake et al.{}{BLACK}DPRK tracks: {SILVER}Erato{}{BLACK}ISR: {SILVER}Sanchimaru et al.{}{BLACK}CHIPS: {SILVER}andythenorth et al.{}
+
+# Track strings
+STR_SU1E 				:Standard Gauge ISR {LTBLUE}(Electrified){WHITE}
+STR_SU1E_BUILD_CAPTION	:New Electric Standard Gauge Vehicles
+STR_SU1E_AUTOREPLACE 	:Electric Standard Gauge Vehicles
+STR_SU1E_NEW_ENGINE 	:Standard gauge ISR (electrified)
+STR_SU1E_TB_CAPTION 	:Standard Gauge ISR (Electrified)
+
+STR_SU1N 				:Standard Gauge ISR {LTBROWN}(Unelectrified){WHITE}
+STR_SU1N_BUILD_CAPTION	:New Standard Gauge Vehicles
+STR_SU1N_AUTOREPLACE 	:Standard Gauge Vehicles
+STR_SU1N_NEW_ENGINE 	:Standard gauge ISR
+STR_SU1N_TB_CAPTION 	:Standard Gauge ISR
+
+STR_SU2E 				:Standard Gauge Cobblestone {LTBLUE}(Electrified){WHITE}
+STR_SU2E_BUILD_CAPTION	:New Electric Standard Gauge Vehicles
+STR_SU2E_AUTOREPLACE 	:Electric Standard Gauge Vehicles
+STR_SU2E_NEW_ENGINE 	:Standard gauge cobblestone (electrified)
+STR_SU2E_TB_CAPTION 	:Standard Gauge Cobblestone (Electrified)
+
+STR_SU2N 				:Standard Gauge Cobblestone {LTBROWN}(Unelectrified){WHITE}
+STR_SU2N_BUILD_CAPTION	:New Standard Gauge Vehicles
+STR_SU2N_AUTOREPLACE 	:Standard Gauge Vehicles
+STR_SU2N_NEW_ENGINE 	:Standard gauge cobblestone
+STR_SU2N_TB_CAPTION 	:Standard Gauge Cobblestone
+
+STR_SU3E 				:Standard Gauge Dirt {LTBLUE}(Electrified){WHITE}
+STR_SU3E_BUILD_CAPTION	:New Electric Standard Gauge Vehicles
+STR_SU3E_AUTOREPLACE 	:Electric Standard Gauge Vehicles
+STR_SU3E_NEW_ENGINE 	:Standard gauge dirt (electrified)
+STR_SU3E_TB_CAPTION 	:Standard Gauge Dirt (Electrified)
+
+STR_SU3N 				:Standard Gauge Dirt {LTBROWN}(Unelectrified){WHITE}
+STR_SU3N_BUILD_CAPTION	:New Standard Gauge Vehicles
+STR_SU3N_AUTOREPLACE 	:Standard Gauge Vehicles
+STR_SU3N_NEW_ENGINE 	:Standard gauge dirt
+STR_SU3N_TB_CAPTION 	:Standard Gauge Dirt
+
+STR_SU4E 				:Standard Gauge Asphalt {LTBLUE}(Electrified){WHITE}
+STR_SU4E_BUILD_CAPTION	:New Electric Standard Gauge Vehicles
+STR_SU4E_AUTOREPLACE 	:Electric Standard Gauge Vehicles
+STR_SU4E_NEW_ENGINE 	:Standard gauge asphalt (electrified)
+STR_SU4E_TB_CAPTION 	:Standard Gauge Asphalt (Electrified)
+
+STR_SU4N 				:Standard Gauge Asphalt {LTBROWN}(Unelectrified){WHITE}
+STR_SU4N_BUILD_CAPTION	:New Standard Gauge Vehicles
+STR_SU4N_AUTOREPLACE 	:Standard Gauge Vehicles
+STR_SU4N_NEW_ENGINE 	:Standard gauge asphalt
+STR_SU4N_TB_CAPTION 	:Standard Gauge Asphalt
+
+STR_NU1E 				:Narrow Gauge ISR {LTBLUE}(Electrified){WHITE}
+STR_NU1E_BUILD_CAPTION	:New Electric Narrow Gauge Vehicles
+STR_NU1E_AUTOREPLACE 	:Electric Narrow Gauge Vehicles
+STR_NU1E_NEW_ENGINE 	:Narrow gauge ISR (electrified)
+STR_NU1E_TB_CAPTION 	:Narrow Gauge ISR (Electrified)
+
+STR_NU1N 				:Narrow Gauge ISR {LTBROWN}(Unelectrified){WHITE}
+STR_NU1N_BUILD_CAPTION	:New Narrow Gauge Vehicles
+STR_NU1N_AUTOREPLACE 	:Narrow Gauge Vehicles
+STR_NU1N_NEW_ENGINE 	:Narrow gauge ISR
+STR_NU1N_TB_CAPTION 	:Narrow Gauge ISR
+
+STR_NU2E 				:Narrow Gauge Cobblestone {LTBLUE}(Electrified){WHITE}
+STR_NU2E_BUILD_CAPTION	:New Electric Narrow Gauge Vehicles
+STR_NU2E_AUTOREPLACE 	:Electric Narrow Gauge Vehicles
+STR_NU2E_NEW_ENGINE 	:Narrow gauge cobblestone (electrified)
+STR_NU2E_TB_CAPTION 	:Narrow Gauge Cobblestone (Electrified)
+
+STR_NU2N 				:Narrow Gauge Cobblestone {LTBROWN}(Unelectrified){WHITE}
+STR_NU2N_BUILD_CAPTION	:New Narrow Gauge Vehicles
+STR_NU2N_AUTOREPLACE 	:Narrow Gauge Vehicles
+STR_NU2N_NEW_ENGINE 	:Narrow gauge cobblestone
+STR_NU2N_TB_CAPTION 	:Narrow Gauge Cobblestone
+
+STR_NU3E 				:Narrow Gauge Dirt {LTBLUE}(Electrified){WHITE}
+STR_NU3E_BUILD_CAPTION	:New Electric Narrow Gauge Vehicles
+STR_NU3E_AUTOREPLACE 	:Electric Narrow Gauge Vehicles
+STR_NU3E_NEW_ENGINE 	:Narrow gauge dirt (electrified)
+STR_NU3E_TB_CAPTION 	:Narrow Gauge Dirt (Electrified)
+
+STR_NU3N 				:Narrow Gauge Dirt {LTBROWN}(Unelectrified){WHITE}
+STR_NU3N_BUILD_CAPTION	:New Narrow Gauge Vehicles
+STR_NU3N_AUTOREPLACE 	:Narrow Gauge Vehicles
+STR_NU3N_NEW_ENGINE 	:Narrow gauge dirt
+STR_NU3N_TB_CAPTION 	:Narrow Gauge Dirt
+
+STR_NU4E 				:Narrow Gauge Asphalt {LTBLUE}(Electrified){WHITE}
+STR_NU4E_BUILD_CAPTION	:New Electric Narrow Gauge Vehicles
+STR_NU4E_AUTOREPLACE 	:Electric Narrow Gauge Vehicles
+STR_NU4E_NEW_ENGINE 	:Narrow gauge asphalt (electrified)
+STR_NU4E_TB_CAPTION 	:Narrow Gauge Asphalt (Electrified)
+
+STR_NU4N 				:Narrow Gauge Asphalt {LTBROWN}(Unelectrified){WHITE}
+STR_NU4N_BUILD_CAPTION	:New Narrow Gauge Vehicles
+STR_NU4N_AUTOREPLACE 	:Narrow Gauge Vehicles
+STR_NU4N_NEW_ENGINE 	:Narrow gauge asphalt
+STR_NU4N_TB_CAPTION 	:Narrow Gauge Asphalt
+
+STR_dU1E 				:Dual Gauge ISR {LTBLUE}(Electrified){WHITE}
+STR_dU1E_BUILD_CAPTION	:New Electric Dual Gauge Vehicles
+STR_dU1E_AUTOREPLACE 	:Electric Dual Gauge Vehicles
+STR_dU1E_NEW_ENGINE 	:Dual gauge ISR (electrified)
+STR_dU1E_TB_CAPTION 	:Dual Gauge ISR (Electrified)
+
+STR_dU1N 				:Dual Gauge ISR {LTBROWN}(Unelectrified){WHITE}
+STR_dU1N_BUILD_CAPTION	:New Dual Gauge Vehicles
+STR_dU1N_AUTOREPLACE 	:Dual Gauge Vehicles
+STR_dU1N_NEW_ENGINE 	:Dual gauge ISR
+STR_dU1N_TB_CAPTION 	:Dual Gauge ISR
+
+STR_dU2E 				:Dual Gauge Cobblestone {LTBLUE}(Electrified){WHITE}
+STR_dU2E_BUILD_CAPTION	:New Electric Dual Gauge Vehicles
+STR_dU2E_AUTOREPLACE 	:Electric Dual Gauge Vehicles
+STR_dU2E_NEW_ENGINE 	:Dual gauge cobblestone (electrified)
+STR_dU2E_TB_CAPTION 	:Dual Gauge Cobblestone (Electrified)
+
+STR_dU2N 				:Dual Gauge Cobblestone {LTBROWN}(Unelectrified){WHITE}
+STR_dU2N_BUILD_CAPTION	:New Dual Gauge Vehicles
+STR_dU2N_AUTOREPLACE 	:Dual Gauge Vehicles
+STR_dU2N_NEW_ENGINE 	:Dual gauge cobblestone
+STR_dU2N_TB_CAPTION 	:Dual Gauge Cobblestone
+
+STR_dU3E 				:Dual Gauge Dirt {LTBLUE}(Electrified){WHITE}
+STR_dU3E_BUILD_CAPTION	:New Electric Dual Gauge Vehicles
+STR_dU3E_AUTOREPLACE 	:Electric Dual Gauge Vehicles
+STR_dU3E_NEW_ENGINE 	:Dual gauge dirt (electrified)
+STR_dU3E_TB_CAPTION 	:Dual Gauge Dirt (Electrified)
+
+STR_dU3N 				:Dual Gauge Dirt {LTBROWN}(Unelectrified){WHITE}
+STR_dU3N_BUILD_CAPTION	:New Dual Gauge Vehicles
+STR_dU3N_AUTOREPLACE 	:Dual Gauge Vehicles
+STR_dU3N_NEW_ENGINE 	:Dual gauge dirt
+STR_dU3N_TB_CAPTION 	:Dual Gauge Dirt
+
+STR_dU4E 				:Dual Gauge Asphalt {LTBLUE}(Electrified){WHITE}
+STR_dU4E_BUILD_CAPTION	:New Electric Dual Gauge Vehicles
+STR_dU4E_AUTOREPLACE 	:Electric Dual Gauge Vehicles
+STR_dU4E_NEW_ENGINE 	:Dual gauge asphalt (electrified)
+STR_dU4E_TB_CAPTION 	:Dual Gauge Asphalt (Electrified)
+
+STR_dU4N 				:Dual Gauge Asphalt {LTBROWN}(Unelectrified){WHITE}
+STR_dU4N_BUILD_CAPTION	:New Dual Gauge Vehicles
+STR_dU4N_AUTOREPLACE 	:Dual Gauge Vehicles
+STR_dU4N_NEW_ENGINE 	:Dual gauge asphalt
+STR_dU4N_TB_CAPTION 	:Dual Gauge Asphalt
+
+
+# Parameter Strings
+STR_MC_0				:/4
+STR_MC_1				:/2
+STR_MC_2				:x1 (Default)
+STR_MC_3				:x2
+STR_MC_4				:x4
+
+STR_MSC					:Construction cost
+STR_MSM					:Maintenance cost
+STR_CON_DESC			:
+STR_MAINT_DESC			:You must activate 'Advanced Settings -> Economy -> Infrastructure maintenance' for this setting to take effect
+
+STR_PARAM_ELEC			:Electrification types available
+STR_PARAM_ELEC_DESC		:To reduce clutter, you may remove unelectrified, or electrified tracks.
+STR_PARAM_ELEC_0		:Both
+STR_PARAM_ELEC_1		:Electrified only
+STR_PARAM_ELEC_2		:Unelectrified only
+
+STR_PARAM_GAUGE			:Railway gauges available
+STR_PARAM_GAUGE_DESC	:To reduce clutter, you may pick and choose railway gauges
+STR_PARAM_GAUGE_0		:Standard gauge only
+STR_PARAM_GAUGE_1		:Narrow gauge only
+STR_PARAM_GAUGE_2		:Both
+STR_PARAM_GAUGE_3		:Both and dual gauge
+STR_PARAM_GAUGE_4		:Dual gauge only
+
+STR_PARAM_ISR			:Availability ISR tracks
+STR_PARAM_ISR_DESC		:Adds ISR tracks
+STR_PARAM_CHIPS_D		:Availability Dirt tracks
+STR_PARAM_CHIPS_D_DESC	:Adds Dirt tracks
+STR_PARAM_CHIPS_C		:Availability Cobblestone tracks
+STR_PARAM_CHIPS_C_DESC	:Adds Cobblestone tracks
+STR_PARAM_CHIPS_A		:Availability Asphalt tracks
+STR_PARAM_CHIPS_A_DESC	:Adds Asphalt tracks
+
+STR_PARAM_STYLE			:Visual compatibility with
+STR_PARAM_STYLE_0		:Japan Set Tracks
+STR_PARAM_STYLE_1		:Japan Set Tracks Finescale
+STR_PARAM_STYLE_2		:DPRK Tracks
+STR_PARAM_STYLE_DESC	:Changes the actual tracks used.
+
+# Misc Strings
