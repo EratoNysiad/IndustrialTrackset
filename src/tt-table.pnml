@@ -1,0 +1,84 @@
+//----------------- Standard gauge
+//Unelectrified
+#define STDG \
+	"RAIL", \
+	"SAAN", "SABN", "SACN", "SADN", "SAEN", \
+	"SBAN", "SBBN", "SBCN", "SBDN", "SBEN", \
+	"SCAN", "SCBN", "SCCN", "SCDN", "SCEN", \
+	"SUAN", "SUBN", "SUUN", "SUDN", "SUEN", \
+	"SU1N", "SU2N", "SU3N", "SU4N", "SU5N"
+//Electrified
+#define STEL \
+	"ELRL", \
+	"SAAE", "SABE", "SACE", "SADE", "SAEE", \
+	"SBAE", "SBBE", "SBCE", "SBDE", "SBEE", \
+	"SCAE", "SCBE", "SCCE", "SCDE", "SCEE", \
+	"SUAE", "SUBE", "SUUE", "SUDE", "SUEE", \
+	"SU1E", "SU2E", "SU3E", "SU4E", "SU5E", \
+	"SAAD", "SABD", "SACD", "SADD", "SAED", \
+	"SBAD", "SBBD", "SBCD", "SBDD", "SBED", \
+	"SCAD", "SCBD", "SCCD", "SCDD", "SCED", \
+	"SUAD", "SUBD", "SUUD", "SUDD", "SUED"
+//3rd Rail
+#define ST3D \
+	"MTRO", \
+	"SAA3", "SAB3", "SAC3", "SAD3", "SAE3", \
+	"SBA3", "SBB3", "SBC3", "SBD3", "SBE3", \
+	"SCA3", "SCB3", "SCC3", "SCD3", "SCE3", \
+	"SSA3", "SSB3", "SSC3", "SSD3", "SSE3", \
+	"SUA3", "SUB3", "SUC3", "SUD3", "SUE3"
+//----------------- Narrow gauge
+//Unelectrified
+#define NRWG \
+	"NAAN", "NABN", "NACN", "NADN", "NAEN", "NAKN", \
+	"NBAN", "NBBN", "NBCN", "NBDN", "NBEN", "NBKN", \
+	"NCAN", "NCBN", "NCCN", "NCDN", "NCEN", "NCKN", \
+	"NUAN", "NUBN", "NUUN", "NUDN", "NUEN", \
+	"NU1N", "NU2N", "NU3N", "NU4N", "NU5N"
+//Electrified
+#define NREL \
+	"NAAE", "NABE", "NACE", "NADE", "NAEE", "NAKE", \
+	"NBAE", "NBBE", "NBCE", "NBDE", "NBEE", "NBKE", \
+	"NCAE", "NCBE", "NCCE", "NCDE", "NCEE", "NCKE", \
+	"NUAE", "NUBE", "NUUE", "NUDE", "NUEE", \
+	"NU1E", "NU2E", "NU3E", "NU4E", "NU5E", \
+	"NAAd", "NABd", "NACd", "NAdd", "NAEd", "NAKd", \
+	"NBAd", "NBBd", "NBCd", "NBdd", "NBEd", "NBKd", \
+	"NCAd", "NCBd", "NCCd", "NCdd", "NCEd", "NCKd", \
+	"NUAd", "NUBd", "NUUd", "NUdd", "NUEd"
+//------------------- Dual gauge
+//Unelectrified
+#define DUDG \
+	"dAAN", "dABN", "dACN", "dADN", "dAEN", \
+	"dBAN", "dBBN", "dBCN", "dBDN", "dBEN", \
+	"dCAN", "dCBN", "dCCN", "dCDN", "dCEN", \
+	"dUAN", "dUBN", "dUUN", "dUDN", "dUEN", \
+	"dU1N", "dU2N", "dU3N", "dU4N", "dU5N"
+//Electrified
+#define DUEL \
+	"dAAE", "dABE", "dACE", "dADE", "dAEE", \
+	"dBAE", "dBBE", "dBCE", "dBDE", "dBEE", \
+	"dCAE", "dCBE", "dCCE", "dCDE", "dCEE", \
+	"dUAE", "dUBE", "dUUE", "dUDE", "dUEE", \
+	"dU1E", "dU2E", "dU3E", "dU4E", "dU5E", \
+	"dAAD", "dABD", "dACD", "dADD", "dAED", \
+	"dBAD", "dBBD", "dBCD", "dBDD", "dBED", \
+	"dCAD", "dCBD", "dCCD", "dCDD", "dCED", \
+	"dUAD", "dUBD", "dUUD", "dUDD", "dUED", \
+	"dAAd", "dABd", "dACd", "dADd", "dAEd", \
+	"dBAd", "dBBd", "dBCd", "dBDd", "dBEd", \
+	"dCAd", "dCBd", "dCCd", "dCDd", "dCEd", \
+	"dUAd", "dUBd", "dUUd", "dUDd", "dUEd"
+
+//Compatibility	
+#define STD_ALL [STDG, STEL, DUDG, DUEL]
+#define STD_UNELEC [STDG, DUDG]
+#define STD_ELEC [STEL, DUEL]
+#define STD_3RD [ST3D]
+#define NRW_ALL [NRWG, NREL, DUDG, DUEL]
+#define NRW_UNELEC [NRWG, DUDG]
+#define NRW_ELEC [NREL, DUEL]
+
+#define DUAL_ALL [STDG, STEL, NRWG, NREL, DUDG, DUEL]
+#define DUAL_UNELEC [STDG, NRWG, DUDG]
+#define DUAL_ELEC [STEL, NREL, DUEL]
