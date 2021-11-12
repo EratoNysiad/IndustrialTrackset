@@ -8,9 +8,13 @@ main = open('indtrak.pnml', 'w')#w overrides, a appends
 main.write("#include \"src/header.pnml\"\n" +
 "#include \"src/template.pnml\"\n" +
 "#include \"src/tt-table.pnml\"\n" +
-"#include \"src/gui.pnml\"\n" +
-"spriteset (NO_fences, \"grf/ISR_DPRK_S.png\") {\n" +
-"	tmpl_no_fences()\n" +
+"#include \"src/gui.pnml\"\n" + 
+"spriteset (SPRITESET_NO_fences, \"grf/ISR_DPRK_S.png\") {" +
+"	tmpl_no_fences()" +
+"}" +
+"switch(FEAT_RAILTYPES, SELF, NO_fences, PARAM_FENCE) {" +
+"	0: SPRITESET_NO_fences;" +
+"	CB_FAILED;" +
 "}")
 main.close()
 

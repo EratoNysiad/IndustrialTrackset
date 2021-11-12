@@ -2,7 +2,7 @@
 # 0x01 -> English
 
 # General GRF strings
-STR_GRF_NAME	:Industrial Track Set 1.3
+STR_GRF_NAME	:Industrial Track Set 1.4
 STR_GRF_DESC	:A trackset for use with CHIPS, FIRS and ISR. Designed for visual compatibility with JapanSet Tracks and DPRK tracks. {}{BLACK} {}{COPYRIGHT}2021 Erato Nysiad{}License:GPL v2{}Credit:{}{BLACK}Japan Set Tracks: {SILVER}Dandan, Emperor Jake et al.{}{BLACK}DPRK tracks: {SILVER}Erato{}{BLACK}ISR: {SILVER}Sanchimaru et al.{}{BLACK}CHIPS: {SILVER}andythenorth et al.{}
 
 # Track strings
@@ -191,5 +191,8 @@ STR_PARAM_STYLE_0		:Japan Set Tracks
 STR_PARAM_STYLE_1		:Japan Set Tracks Finescale
 STR_PARAM_STYLE_2		:DPRK Tracks
 STR_PARAM_STYLE_DESC	:Changes the actual tracks used.
+
+STR_PARAM_FENCE			:Enable fences
+STR_PARAM_FENCE_DESC	:When disabled, no fences are displayed. When enabled, default fences are used
 
 # Misc Strings
