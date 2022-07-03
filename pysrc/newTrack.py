@@ -101,7 +101,7 @@ def addTracks(csvID = 0):
 	"         compatible_railtype_list:   " + trackList.at[csvID,"RTC"] + ";\n" +
 	"         powered_railtype_list:      " + trackList.at[csvID,"RTP"] + ";\n" +
 	"		 alternative_railtype_list:  " + trackList.at[csvID,"RTA"] + ";\n" +
-	"         speed_limit:                (0 == 0) ? 121 : 70 km/h;\n" +
+	"         speed_limit:                (PARAM_SPEED == 0) ? 121 : 0 km/h;\n" +
 	"         introduction_date:			 date(1800,1,1);\n" +
 	"		 map_colour:				 " + trackList.at[csvID,"Colour"] + ";\n" +
 	"         station_graphics:           RAILTYPE_STATION_NORMAL; \n" +

@@ -11,7 +11,7 @@ item(FEAT_RAILTYPES, NU1E_ID, 12) {
          compatible_railtype_list:   NRW_ALL;
          powered_railtype_list:      NRW_ELEC;
 		 alternative_railtype_list:  NRW_ELEC;
-         speed_limit:                (0 == 0) ? 121 : 70 km/h;
+         speed_limit:                (PARAM_SPEED == 0) ? 121 : 0 km/h;
          introduction_date:			 date(1800,1,1);
 		 map_colour:				 0x44;
          station_graphics:           RAILTYPE_STATION_NORMAL; 

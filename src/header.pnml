@@ -4,7 +4,7 @@ grf {
 	grfid:	"EN\0E\01";
 	name:	string(STR_GRF_NAME);
 	desc:	string(STR_GRF_DESC);
-	version:	4;
+	version:	5;
 	min_compatible_version: 0;
 	param {
 		PARAM_CONST {
@@ -124,6 +124,14 @@ grf {
 			type:	bool;
 			name:	string(STR_PARAM_FENCE);
 			desc:	string(STR_PARAM_FENCE_DESC);
+			def_value: 0;
+		}
+	}
+	param {
+		PARAM_SPEED {
+			type:	bool;
+			name:	string(STR_PARAM_SPEED);
+			desc:	string(STR_PARAM_SPEED_DESC);
 			def_value: 0;
 		}
 	}

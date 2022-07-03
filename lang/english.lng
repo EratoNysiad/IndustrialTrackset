@@ -2,8 +2,8 @@
 # 0x01 -> English
 
 # General GRF strings
-STR_GRF_NAME	:Industrial Track Set 1.4
-STR_GRF_DESC	:A trackset for use with CHIPS, FIRS and ISR. Designed for visual compatibility with JapanSet Tracks and DPRK tracks. {}{BLACK} {}{COPYRIGHT}2021 Erato Nysiad{}License:GPL v2{}Credit:{}{BLACK}Japan Set Tracks: {SILVER}Dandan, Emperor Jake et al.{}{BLACK}DPRK tracks: {SILVER}Erato{}{BLACK}ISR: {SILVER}Sanchimaru et al.{}{BLACK}CHIPS: {SILVER}andythenorth et al.{}
+STR_GRF_NAME	:Industrial Track Set 1.5
+STR_GRF_DESC	:A trackset for use with CHIPS, FIRS and ISR. Designed for visual compatibility with JapanSet Tracks and DPRK tracks. {}{BLACK} {}{COPYRIGHT}2021-2022 Erato Nysiad{}License:GPL v2{}Credit:{}{BLACK}Japan Set Tracks: {SILVER}Dandan, Emperor Jake et al.{}{BLACK}DPRK tracks: {SILVER}Erato{}{BLACK}ISR: {SILVER}Sanchimaru et al.{}{BLACK}CHIPS: {SILVER}andythenorth et al.{}
 
 # Track strings
 STR_SU1E 				:Standard Gauge ISR {LTBLUE}(Electrified){WHITE}
@@ -164,7 +164,7 @@ STR_CON_DESC			:
 STR_MAINT_DESC			:You must activate 'Advanced Settings -> Economy -> Infrastructure maintenance' for this setting to take effect
 
 STR_PARAM_ELEC			:Electrification types available
-STR_PARAM_ELEC_DESC		:To reduce clutter, you may remove unelectrified, or electrified tracks.
+STR_PARAM_ELEC_DESC		:To reduce clutter, you may remove unelectrified, or electrified tracks
 STR_PARAM_ELEC_0		:Both
 STR_PARAM_ELEC_1		:Electrified only
 STR_PARAM_ELEC_2		:Unelectrified only
@@ -194,5 +194,8 @@ STR_PARAM_STYLE_DESC	:Changes the actual tracks used.
 
 STR_PARAM_FENCE			:Enable fences
 STR_PARAM_FENCE_DESC	:When disabled, no fences are displayed. When enabled, default fences are used
+
+STR_PARAM_SPEED			:Disable speed limits
+STR_PARAM_SPEED_DESC	:When disabled, the tracks will have no speed limits, when enabled, all tracks will be limited to 120km/h
 
 # Misc Strings

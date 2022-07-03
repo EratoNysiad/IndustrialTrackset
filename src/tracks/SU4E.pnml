@@ -11,7 +11,7 @@ item(FEAT_RAILTYPES, SU4E_ID, 7) {
          compatible_railtype_list:   STD_ALL;
          powered_railtype_list:      STD_ELEC;
 		 alternative_railtype_list:  STD_ELEC;
-         speed_limit:                (0 == 0) ? 121 : 70 km/h;
+         speed_limit:                (PARAM_SPEED == 0) ? 121 : 0 km/h;
          introduction_date:			 date(1800,1,1);
 		 map_colour:				 0xC3;
          station_graphics:           RAILTYPE_STATION_NORMAL; 
